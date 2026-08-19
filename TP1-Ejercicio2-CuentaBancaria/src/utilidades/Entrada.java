@@ -7,7 +7,7 @@ public class Entrada {
     private static Scanner scanner = new Scanner(System.in);
 
     public static String cadena(String mensaje) {
-        System.out.println(mensaje);
+        System.out.print(mensaje + " ");
         return scanner.nextLine();
     }
 
@@ -15,7 +15,7 @@ public class Entrada {
         int numero;
         while(true) {
             try {
-                System.out.println(mensaje);
+                System.out.print(mensaje + " ");
                 numero = scanner.nextInt();
                 scanner.nextLine();
                 return numero;
@@ -30,7 +30,7 @@ public class Entrada {
         double numero;
         while (true) {
             try {
-                System.out.println(mensaje);
+                System.out.print(mensaje + " ");
                 numero = scanner.nextDouble();
                 scanner.nextLine();
                 return numero;

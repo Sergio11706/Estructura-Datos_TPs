@@ -1,4 +1,4 @@
-package logica;
+package modelo;
 
 public class CuentaBancaria {
     private String titular;
@@ -14,6 +14,18 @@ public class CuentaBancaria {
         this.titular = titular;
         this.saldo = saldo;
         this.tipoCuenta = tipoCuenta;
+    }
+
+    public String getTitular() {
+        return titular;
+    }
+
+    public double getSaldo() {
+        return saldo;
+    }
+
+    public String getTipoCuenta() {
+        return tipoCuenta;
     }
 
     public void depositar(double monto) {
@@ -45,17 +57,5 @@ public class CuentaBancaria {
                 "%nTipo de Cuenta: %s" +
                 "%n------------------------------------"
                 ,getTitular(),getSaldo(),getTipoCuenta());
-    }
-
-    public String getTitular() {
-        return titular;
-    }
-
-    public double getSaldo() {
-        return saldo;
-    }
-
-    public String getTipoCuenta() {
-        return tipoCuenta;
     }
 }

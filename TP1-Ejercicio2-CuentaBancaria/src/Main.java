@@ -1,5 +1,5 @@
 import es.CuentaBancariaES;
-import logica.CuentaBancaria;
+import modelo.CuentaBancaria;
 
 public class Main {
     public static void main(String[] args) {
