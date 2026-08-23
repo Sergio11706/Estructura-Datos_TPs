@@ -1,4 +1,4 @@
-package TP1.Bateria;
+package TP1.Ejercicio5;
 public class main {
     public static void main(String[] args) {
         bateria b = new bateria(50);

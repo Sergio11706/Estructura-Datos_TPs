@@ -1,4 +1,4 @@
-package TP1.TanqueAgua;
+package TP1.Ejercicio6;
 
 //Codigo corregido:
 class TanqueAgua {
