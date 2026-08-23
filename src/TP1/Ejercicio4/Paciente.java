@@ -1,4 +1,4 @@
-package TP1;
+package TP1.Ejercicio4;
 
 public class Paciente {
     private String nombre;
