@@ -1,6 +1,4 @@
-package es;
-
-import utilidades.Entrada;
+package TP1.Ejercicio2;
 
 public class CuentaBancariaES {
     public static void menu() {

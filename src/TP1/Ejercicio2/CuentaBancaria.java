@@ -1,4 +1,4 @@
-package modelo;
+package TP1.Ejercicio2;
 
 public class CuentaBancaria {
     private String titular;

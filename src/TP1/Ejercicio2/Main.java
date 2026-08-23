@@ -1,5 +1,4 @@
-import es.CuentaBancariaES;
-import modelo.CuentaBancaria;
+package TP1.Ejercicio2;
 
 public class Main {
     public static void main(String[] args) {
