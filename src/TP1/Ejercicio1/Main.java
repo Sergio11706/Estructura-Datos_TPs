@@ -11,11 +11,16 @@ public class Main {
         double radio = pedirDato(scanner, "Ingrese el radio");
         double altura = pedirDato(scanner, "Ingrese la altura");
 
-        cilindro.setRadio(radio);
-        cilindro.setAltura(altura);
+        try {
+            cilindro.setRadio(radio);
+            cilindro.setAltura(altura);
 
-        System.out.println("El volumen es: " + String.format("%.2f", cilindro.calcularVolumen()));
-        System.out.println("El área de superficie es: " + String.format("%.2f", cilindro.calcularAreaSuperficie()));
+            System.out.println("El volumen es: " + String.format("%.2f", cilindro.calcularVolumen()));
+            System.out.println("El área de superficie es: " + String.format("%.2f", cilindro.calcularAreaSuperficie()));
+
+        } catch (IllegalArgumentException e) {
+            System.out.println("Error: " + e.getMessage());
+        }
 
         scanner.close();
     }

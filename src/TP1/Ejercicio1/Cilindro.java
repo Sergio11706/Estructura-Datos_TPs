@@ -20,6 +20,9 @@ public class Cilindro {
     }
 
     public void setRadio(double radio) {
+         if (radio <= 0) {
+            throw new IllegalArgumentException("El radio no puede ser negativo");
+        }
         this.radio = radio;
     }
 
@@ -28,6 +31,9 @@ public class Cilindro {
     }
 
     public void setAltura(double altura) {
+        if (altura <= 0) {
+            throw new IllegalArgumentException("La altura no puede ser negativa");
+        }
         this.altura = altura;
     }
 
