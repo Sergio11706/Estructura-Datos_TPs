@@ -1,4 +1,4 @@
-package TP1.punto1;
+package TP1.Ejercicio1;
 
 import java.util.InputMismatchException;
 import java.util.Scanner;
