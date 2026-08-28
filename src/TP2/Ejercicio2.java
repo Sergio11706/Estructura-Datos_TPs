@@ -8,15 +8,51 @@ public class Ejercicio2 {
         Scanner sc = new Scanner(System.in);
         // System.out.println("Ingresar cantidad de vuelos a gestionar: ");
         // int cantidadVuelos = sc.nextInt();
-        //int cantidadVuelos = 3;
+        // int cantidadVuelos = 3;
 
-        int[] vuelos = { 101, 205, 310, 415, 520 };
+        int[] vuelos = {
+                1234,
+                4521,
+                7812,
+                3056,
+                5678,
+                9012,
+                3456,
+                7890,
+                2468,
+                1357,
+                8642,
+                9753,
+                1122,
+                3344,
+                5566,
+                7788,
+                9900,
+                1235,
+                6789,
+                4321
+        };
 
-        String[] estadoVuelos = {
+        String[] estados = {
                 "Programado",
                 "En Vuelo",
+                "Aterrizado",
+                "Cancelado",
+                "Programado",
+                "Aterrizado",
+                "En Vuelo",
+                "Cancelado",
+                "En Vuelo",
+                "Programado",
+                "Aterrizado",
+                "Programado",
+                "Cancelado",
+                "En Vuelo",
+                "Aterrizado",
+                "Programado",
                 "Cancelado",
                 "Aterrizado",
+                "En Vuelo",
                 "Programado"
         };
         // int[] vuelos = new int[cantidadVuelos];
@@ -35,16 +71,18 @@ public class Ejercicio2 {
         // }
 
         // Prueba funcion buscarNumeroDeVuelo()
-        buscarNumeroDeVuelo(sc, vuelos, estadoVuelos);
-        presionarParaContinuar(sc);
+        buscarNumeroDeVuelo(sc, vuelos, estados);
 
-        //Prueba funcion cantidadVuelosEnEstadoX
-        cantidadVuelosEnEstadoX(sc, vuelos, estadoVuelos);
+        // Prueba funcion cantidadVuelosEnEstadoX
+        cantidadVuelosEnEstadoX(sc, vuelos, estados);
+
+        //Reorganizar arreglos
+        reorganizarArreglo(sc, vuelos, estados);
 
         sc.close();
     }
 
-    public static void buscarNumeroDeVuelo(Scanner sc, int[] vuelos, String[] estadoVuelos) {
+    public static void buscarNumeroDeVuelo(Scanner sc, int[] vuelos, String[] estados) {
         System.out.println("Ingresar número de vuelo a buscar:");
         int numero = sc.nextInt();
 
@@ -52,7 +90,8 @@ public class Ejercicio2 {
 
         for (int i = 0; i < vuelos.length; i++) {
             if (vuelos[i] == numero) {
-                System.out.println("Vuelo encontrado, su estado actual es: " + estadoVuelos[i] + ", su posición en el arreglo es: " + i);
+                System.out.println("Vuelo encontrado, su estado actual es: " + estados[i]
+                        + ", su posición en el arreglo es: " + i);
 
                 encontrado = true;
 
@@ -64,36 +103,70 @@ public class Ejercicio2 {
             System.out.println("Vuelo no encontrado");
         }
 
+        presionarParaContinuar(sc);
+
     }
 
-    public static void cantidadVuelosEnEstadoX(Scanner sc, int[] vuelos, String[] estadoVuelos) {
+    public static void cantidadVuelosEnEstadoX(Scanner sc, int[] vuelos, String[] estados) {
         System.out.println("Ingresar estado de vuelo a buscar:");
         String buscar = sc.nextLine();
 
         int contador = 0;
-        for (int i = 0; i < estadoVuelos.length; i++) {
-            if (estadoVuelos[i].equals(buscar)) {
+        for (int i = 0; i < estados.length; i++) {
+            if (estados[i].equals(buscar)) {
                 contador += 1;
             }
         }
 
         System.out.println("La cantidad de vuelos en estado: " + buscar + ", es: " + contador);
+        presionarParaContinuar(sc);
     }
 
-    public static void numeroDeVuelosConEstadoX(Scanner sc, String[] estadoVuelos, int[] numeroVuelos, int cantidad) {
+    public static void numeroDeVuelosConEstadoX(Scanner sc, int[] vuelos, String[] estados) {
         System.out.println("Ingresar estado de vuelo a buscar:");
-        String estadoVueloABuscar = sc.nextLine();
-        int[] numeroVuelosConEstadoX = new int[cantidad];
+        String buscar = sc.nextLine();
+
+        int[] numeroVuelos = new int[vuelos.length];
         int indiceAuxiliar = 0;
-        for (int i = 0; i < estadoVuelos.length; i++) {
-            System.out.println(estadoVuelos[i]);
-            if (estadoVuelos[i].equals(estadoVueloABuscar)) {
-                numeroVuelosConEstadoX[indiceAuxiliar] = numeroVuelos[i];
+
+        for (int i = 0; i < estados.length; i++) {
+            System.out.println(estados[i]);
+            if (estados[i].equals(buscar)) {
+                numeroVuelos[indiceAuxiliar] = vuelos[i];
                 indiceAuxiliar++;
             }
         }
 
-        System.out.println("Número de vuelos con un estado especifico es: " + Arrays.toString(numeroVuelosConEstadoX));
+        System.out.println("Número de vuelos con estado:" + buscar + " es: " + Arrays.toString(numeroVuelos));
+        presionarParaContinuar(sc);
+    }
+
+    public static void reorganizarArreglo(Scanner sc, int[] vuelos, String[] estados) {
+
+        for (int i = 0; i < vuelos.length; i++) {
+            if (estados[i].equals("Cancelado")) {
+                int j = i + 1;
+
+                while (j < estados.length && estados[j].equals("Cancelado")) {
+                    j++;
+                }
+
+                if (j < estados.length) {
+                    int auxNumero = vuelos[i];
+                    vuelos[i] = vuelos[j];
+                    vuelos[j] = auxNumero;
+
+                    String auxEstado = estados[i];
+                    estados[i] = estados[j];
+                    estados[j] = auxEstado;
+                }
+            }
+        }
+
+        System.out.println(Arrays.toString(vuelos));
+        System.out.println(Arrays.toString(estados));
+
+        presionarParaContinuar(sc);
     }
 
     public static void presionarParaContinuar(Scanner sc) {
