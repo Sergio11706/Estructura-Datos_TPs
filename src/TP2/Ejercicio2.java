@@ -6,69 +6,23 @@ import java.util.Scanner;
 public class Ejercicio2 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        // System.out.println("Ingresar cantidad de vuelos a gestionar: ");
-        // int cantidadVuelos = sc.nextInt();
-        // int cantidadVuelos = 3;
+        System.out.println("Ingresar cantidad de vuelos a gestionar: ");
+        int cantidadVuelos = sc.nextInt();
 
-        int[] vuelos = {
-                1234,
-                4521,
-                7812,
-                3056,
-                5678,
-                9012,
-                3456,
-                7890,
-                2468,
-                1357,
-                8642,
-                9753,
-                1122,
-                3344,
-                5566,
-                7788,
-                9900,
-                1235,
-                6789,
-                4321
-        };
+        int[] vuelos = new int[cantidadVuelos];
+        String[] estados = new String[cantidadVuelos];
 
-        String[] estados = {
-                "Programado",
-                "En Vuelo",
-                "Aterrizado",
-                "Cancelado",
-                "Programado",
-                "Aterrizado",
-                "En Vuelo",
-                "Cancelado",
-                "En Vuelo",
-                "Programado",
-                "Aterrizado",
-                "Programado",
-                "Cancelado",
-                "En Vuelo",
-                "Aterrizado",
-                "Programado",
-                "Cancelado",
-                "Aterrizado",
-                "En Vuelo",
-                "Programado"
-        };
-        // int[] vuelos = new int[cantidadVuelos];
-        // String[] estadoVuelos = new String[cantidadVuelos];
+        for (int i = 0; i < cantidadVuelos; i++) {
+        System.out.println("Ingrese número de vuelo:");
+        int numeroDeVuelo = sc.nextInt();
+        sc.nextLine();
 
-        // for (int i = 0; i < cantidadVuelos; i++) {
-        // System.out.println("Ingrese número de vuelo:");
-        // int numeroDeVuelo = sc.nextInt();
-        // sc.nextLine();
+        System.out.println("Estado actual:");
+        String estadoDelVuelo = sc.nextLine();
 
-        // System.out.println("Estado actual:");
-        // String estadoDelVuelo = sc.nextLine();
-
-        // vuelos[i] = numeroDeVuelo;
-        // estadoVuelos[i] = estadoDelVuelo;
-        // }
+        vuelos[i] = numeroDeVuelo;
+        estados[i] = estadoDelVuelo;
+        }
 
         // Prueba funcion buscarNumeroDeVuelo()
         buscarNumeroDeVuelo(sc, vuelos, estados);
@@ -176,3 +130,52 @@ public class Ejercicio2 {
     }
 
 }
+
+// Datos de prueba
+/*
+    int[] numerosVuelo = {
+    1234,
+    4521,
+    7812,
+    3056,
+    5678,
+    9012,
+    3456,
+    7890,
+    2468,
+    1357,
+    8642,
+    9753,
+    1122,
+    3344,
+    5566,
+    7788,
+    9900,
+    1235,
+    6789,
+    4321
+};
+
+String[] estados = {
+    "Programado",
+    "En Vuelo",
+    "Aterrizado",
+    "Cancelado",
+    "Programado",
+    "Aterrizado",
+    "En Vuelo",
+    "Cancelado",
+    "En Vuelo",
+    "Programado",
+    "Aterrizado",
+    "Programado",
+    "Cancelado",
+    "En Vuelo",
+    "Aterrizado",
+    "Programado",
+    "Cancelado",
+    "Aterrizado",
+    "En Vuelo",
+    "Programado"
+};
+*/
