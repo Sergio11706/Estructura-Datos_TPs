@@ -36,6 +36,10 @@ public class Ejercicio2 {
 
         // Prueba funcion buscarNumeroDeVuelo()
         buscarNumeroDeVuelo(sc, vuelos, estadoVuelos);
+        presionarParaContinuar(sc);
+
+        //Prueba funcion cantidadVuelosEnEstadoX
+        cantidadVuelosEnEstadoX(sc, vuelos, estadoVuelos);
 
         sc.close();
     }
@@ -62,20 +66,18 @@ public class Ejercicio2 {
 
     }
 
-    public static void cantidadVuelosEnEstadoX(Scanner sc, String[] estadoVuelos, int[] numeroVuelos) {
+    public static void cantidadVuelosEnEstadoX(Scanner sc, int[] vuelos, String[] estadoVuelos) {
         System.out.println("Ingresar estado de vuelo a buscar:");
-        String estadoVueloABuscar = sc.nextLine();
+        String buscar = sc.nextLine();
+
         int contador = 0;
         for (int i = 0; i < estadoVuelos.length; i++) {
-            System.out.println(estadoVuelos[i]);
-            if (estadoVuelos[i].equals(estadoVueloABuscar)) {
+            if (estadoVuelos[i].equals(buscar)) {
                 contador += 1;
             }
         }
 
-        System.out.println("La cantidad de vuelos en estado: " + estadoVueloABuscar + ", es: " + contador);
-
-        numeroDeVuelosConEstadoX(sc, estadoVuelos, numeroVuelos, contador);
+        System.out.println("La cantidad de vuelos en estado: " + buscar + ", es: " + contador);
     }
 
     public static void numeroDeVuelosConEstadoX(Scanner sc, String[] estadoVuelos, int[] numeroVuelos, int cantidad) {
@@ -92,6 +94,12 @@ public class Ejercicio2 {
         }
 
         System.out.println("Número de vuelos con un estado especifico es: " + Arrays.toString(numeroVuelosConEstadoX));
+    }
+
+    public static void presionarParaContinuar(Scanner sc) {
+        sc.nextLine();
+        System.out.println("Presione Enter para continuar...");
+        sc.nextLine();
     }
 
 }
