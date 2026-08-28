@@ -34,13 +34,32 @@ public class Ejercicio2 {
         // estadoVuelos[i] = estadoDelVuelo;
         // }
 
-        System.out.println();
-        // System.out.println(Arrays.toString(vuelos));
-        System.out.println(Arrays.toString(estadoVuelos));
-
-        cantidadVuelosEnEstadoX(sc, estadoVuelos, vuelos);
+        // Prueba funcion buscarNumeroDeVuelo()
+        buscarNumeroDeVuelo(sc, vuelos, estadoVuelos);
 
         sc.close();
+    }
+
+    public static void buscarNumeroDeVuelo(Scanner sc, int[] vuelos, String[] estadoVuelos) {
+        System.out.println("Ingresar número de vuelo a buscar:");
+        int numero = sc.nextInt();
+
+        boolean encontrado = false;
+
+        for (int i = 0; i < vuelos.length; i++) {
+            if (vuelos[i] == numero) {
+                System.out.println("Vuelo encontrado, su estado actual es: " + estadoVuelos[i] + ", su posición en el arreglo es: " + i);
+
+                encontrado = true;
+
+                break;
+            }
+        }
+
+        if (!encontrado) {
+            System.out.println("Vuelo no encontrado");
+        }
+
     }
 
     public static void cantidadVuelosEnEstadoX(Scanner sc, String[] estadoVuelos, int[] numeroVuelos) {
