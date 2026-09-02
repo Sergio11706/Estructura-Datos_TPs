@@ -93,7 +93,7 @@ public class Main {
                     System.out.printf("El promedio general de puntajes es: %.2f\n", promedio);
                     break;
                 case 4:
-                    puntero(liga); // ¡Aquí actualizamos el nombre de tu función!
+                    puntero(liga);
                     break;
                 case 5:
                     mostrarZonaDescenso(liga);
@@ -153,7 +153,6 @@ public class Main {
         System.out.println(lider.toString());
     }
 
-    // e) Listar equipos con puntaje inferior al promedio
     private static void mostrarZonaDescenso(Equipo[] liga) {
         double promedio = calcularPromedio(liga);
         System.out.printf("Promedio actual: %.2f\n", promedio);
