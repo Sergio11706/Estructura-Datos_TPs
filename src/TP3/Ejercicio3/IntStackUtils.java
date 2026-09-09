@@ -69,11 +69,9 @@ public class IntStackUtils {
     Stack<Integer> auxStack = new Stack<>(stack.size());
     Integer cima = stack.pop();
 
-    int mitad;
-    if (Calculator.isEven(stack.size())) mitad = (stack.size() / 2) + 1;
-    else mitad = stack.size() / 2;
+    int mitad = stack.size() / 2;
 
-    for (int i = 0; i < stack.size() - 1 - mitad; i++) {
+    for (int i = 0; i < mitad; i++) {
       auxStack.push(stack.pop());
     }
 
