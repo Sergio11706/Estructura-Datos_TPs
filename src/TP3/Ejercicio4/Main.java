@@ -1,8 +1,7 @@
-package TP3;
+package TP3.Ejercicio4;
 
 import java.util.Scanner;
 import TP3.common.Stack;
-import TP3.Ejercicio4.Tarea;
 
 public class Main {
     public static void agregarTarea(Tarea tarea, Stack<Tarea> pilaTareas){

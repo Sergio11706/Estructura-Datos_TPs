@@ -1,7 +1,7 @@
 package TP3.Ejercicio2;
 
 /**
- * Clase principal para el ejercicio 2 del TP4.
+ * Clase principal para el ejercicio 2 del TP3.
  * 
  * @author Sergio Acuña
  * 
