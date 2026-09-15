@@ -86,6 +86,16 @@ public class Stack<E> {
         stack = newStack;
     }
 
+    public Object[] toArray() {
+      Object[] copia = new Object[count];
+  
+      for (int i = 0; i < count; i++) {
+        copia[i] = stack[i];
+      }
+
+      return copia;
+    }
+
     // Muestra la pila de cima a base sin modificarla (solo lectura del arreglo interno)
     @Override
     public String toString() {
