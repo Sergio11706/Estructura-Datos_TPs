@@ -39,7 +39,7 @@ public final class Helper {
     private Helper() { }
 
     // Muestra el mensaje y lee una línea sin espacios extremos; corta si se cierra la entrada
-    private static String readLine(String message) {
+    public static String readLine(String message) {
         System.out.print(message);
         if (!scanner.hasNextLine()) {
             throw new IllegalStateException("Entrada de datos cerrada.");
@@ -219,8 +219,4 @@ public final class Helper {
         }
     }
 
-    // Cierra el Scanner compartido (llamar una sola vez, al final del main)
-    public static void close() {
-        scanner.close();
-    }
 }
