@@ -1,11 +1,11 @@
 package TP4.Ejercicio5;
-import TP4.common.Queue;
+import util.*;
 
 public class Main {
 
     public static void main(String[] args) {
 
-        Queue<Envio> colaEnvios = new Queue<>(5);
+        Queue<Envio> colaEnvios = new CountedQueue<>(5);
 
         colaEnvios.add(new Envio(  "ENV001", 15.5,
                 Destino.LOCAL, Estado.EN_CAMINO));

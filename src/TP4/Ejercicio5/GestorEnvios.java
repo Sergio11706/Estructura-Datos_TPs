@@ -1,12 +1,12 @@
 package TP4.Ejercicio5;
 import java.util.Optional;
-import TP4.common.Queue;
+import util.*;
 
 public class GestorEnvios {
 
     private Queue<Envio> copiaCola(Queue<Envio> colaOriginal) {
         int cantidad = colaOriginal.size();
-        Queue<Envio> copia = new Queue<>(cantidad);
+        Queue<Envio> copia = new CountedQueue<>(cantidad);
 
         
         for (int i = 0; i < cantidad; i++) {

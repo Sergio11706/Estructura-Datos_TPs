@@ -1,8 +1,6 @@
 package TP4.Ejercicio2.servicio;
 
-import utilidades.Calculator;
-import utilidades.edd.FastQueue;
-import utilidades.edd.Queue;
+import util.*;
 
 public class GestorDeImpresiones {
   private Queue<Integer> codigos;

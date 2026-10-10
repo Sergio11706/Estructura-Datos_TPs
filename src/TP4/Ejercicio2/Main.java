@@ -1,9 +1,7 @@
 package TP4.Ejercicio2;
 
 import TP4.Ejercicio2.servicio.GestorDeImpresiones;
-import utilidades.Input;
-import utilidades.edd.FastQueue;
-import utilidades.edd.Queue;
+import util.*;
 
 public class Main {
   public static void main(String[] args) {
