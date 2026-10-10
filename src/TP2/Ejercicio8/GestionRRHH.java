@@ -1,3 +1,5 @@
+package TP2.Ejercicio8;
+
 class Empleado {
   int legajo;
   String nombre;
